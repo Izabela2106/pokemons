@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    margin: 32px 0;
+}
+
+.filterChips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .filterChips {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filterChips {
+        gap: 8px;
+    }
+}

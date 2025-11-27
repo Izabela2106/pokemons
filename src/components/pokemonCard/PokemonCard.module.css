@@ -1,0 +1,118 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.imageContainer {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 12px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.number {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 8px 0 16px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.typeBadge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+}
+
+.typeBadge:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 16px;
+        min-height: 280px;
+    }
+
+    .imageContainer {
+        height: 140px;
+    }
+
+    .image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .typeBadge {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
